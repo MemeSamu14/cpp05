@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:10:31 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/30 17:42:16 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:09:53 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,18 @@ void	Bureaucrat::signForm(AForm& a)
 	return ;
 }
 
+void		Bureaucrat::executeForm(AForm const &form) const
+{
+	if (this->grade >= form.getGradeExec())
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	else
+	{
+		std::cout << "sfigato" << std::endl;
+		throw AForm::GradeTooLowException();
+	}
+		
+}
 

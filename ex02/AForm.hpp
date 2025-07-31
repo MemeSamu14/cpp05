@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:45:23 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 10:19:04 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 11:54:50 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ class AForm
 		int			getGradeExec() const;
 		void		setIsSigned(bool set){this->isSigned = set;};
 		virtual void		beSigned(const Bureaucrat &a) = 0;
+		virtual void		execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& a);

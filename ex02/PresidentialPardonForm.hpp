@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:21:58 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 11:13:13 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 11:59:59 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	const PresidentialPardonForm& operator=(const PresidentialPardonForm &a);
 	void		beSigned(const Bureaucrat &a);
 	std::string getTarget() const;
+	void	execute(Bureaucrat const &executor) const;
 };
 
 #endif

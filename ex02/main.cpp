@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:09:18 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 11:19:56 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:09:28 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,15 @@ int main(void)
 	
 		try
 		{
-			a.signForm(form);
-			b.signForm(form);
+			// form.execute(a);
+			b.executeForm(form);
+			// form.execute(b);
 		}
 		catch (const Bureaucrat::GradeTooLowException &a)
+		{
+			
+		}
+		catch (const AForm::GradeTooLowException &b)
 		{
 			
 		}
@@ -41,8 +46,8 @@ int main(void)
 	
 		try
 		{
-			a.signForm(form);
-			b.signForm(form);
+			form.execute(a);
+			// form.execute(b);
 		}
 		catch (const Bureaucrat::GradeTooLowException &a)
 		{
@@ -57,8 +62,8 @@ int main(void)
 	
 		try
 		{
-			a.signForm(form);
-			b.signForm(form);
+			form.execute(a);
+			// form.execute(b);
 		}
 		catch (const Bureaucrat::GradeTooLowException &a)
 		{

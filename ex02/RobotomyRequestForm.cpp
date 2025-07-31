@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:21:58 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 11:17:12 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:09:15 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,29 @@ std::string RobotomyRequestForm::getTarget() const
 
 void	RobotomyRequestForm::beSigned(const Bureaucrat &a)
 {
+	if (this->getIsSigned() == false && a.getGrade() >= this->getGradeSign())
+	{
+		this->setIsSigned(true);
+	}
+	else
+		throw AForm::GradeTooLowException();
+}
+
+void		RobotomyRequestForm::execute(Bureaucrat const &executor) const
+{
 	std::srand(std::time(NULL));
 	int random_number = std::rand();
 
-	if (this->getIsSigned() == false && a.getGrade() >= this->getGradeSign())
+	if (this->getIsSigned() == false && executor.getGrade() >= this->getGradeExec())
 	{
 		if (random_number >= 50)
 		{
 			std::cout << "Makes some drilling noises, " << target 
 			<< " has been robotomized successfully 50%' of the time" << std::endl;
-			this->setIsSigned(true);
 		}
 		else
 			std::cout << "Robotomy Failed" << std::endl;
 	}
+	else
+		throw AForm::GradeTooLowException();
 }

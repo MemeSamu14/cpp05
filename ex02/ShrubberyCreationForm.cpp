@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 16:12:56 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 11:02:29 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:03:47 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,17 @@ void	ShrubberyCreationForm::beSigned(const Bureaucrat &a)
 {
 	if (this->getIsSigned() == false && a.getGrade() >= this->getGradeSign())
 	{
+		this->setIsSigned(true);
+	}
+	else
+		throw AForm::GradeTooLowException();
+	return ;
+}
+
+void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+{
+	if (this->getIsSigned() == false && executor.getGrade() >= this->getGradeExec())
+	{
 		std::string tmp1 = this->target.c_str();
 		std::string tmp2 = "_shrubbery";
 		std::string str1 = tmp1 + tmp2;
@@ -54,10 +65,11 @@ void	ShrubberyCreationForm::beSigned(const Bureaucrat &a)
 			"    |\n";
 		file << str;
 		file.close();
-		this->setIsSigned(true);
 	}
-	return ;
+	else
+		throw AForm::GradeTooLowException();
 }
+
 
 
 // void	ShrubberyCreationForm::beSigned(const Bureaucrat &a)

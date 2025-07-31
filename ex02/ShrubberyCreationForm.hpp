@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 16:12:56 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 10:26:03 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 11:55:05 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ShrubberyCreationForm: public AForm
 		std::string	getName() const;
 		void		beSigned(const Bureaucrat &a);
 		std::string getTarget() const;
-	
+		void		execute(Bureaucrat const &executor) const;
 };
 
 
