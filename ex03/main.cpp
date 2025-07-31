@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:09:18 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 12:11:26 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 17:42:16 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,55 +16,16 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
 	{
-		ShrubberyCreationForm	form("Home");
-		Bureaucrat				a("Francesco", 150);
-		Bureaucrat				b("Beppe", 5);
-	
-		try
-		{
-			// form.execute(a);
-			b.executeForm(form);
-			// form.execute(b);
-		}
-		catch (const Bureaucrat::GradeTooLowException &a)
-		{
-			
-		}
-	}
-	{
-		RobotomyRequestForm		form("Garden");
-		Bureaucrat				a("Francesco", 150);
-		Bureaucrat				b("Beppe", 5);
-	
-		try
-		{
-			form.execute(a);
-			// form.execute(b);
-		}
-		catch (const Bureaucrat::GradeTooLowException &a)
-		{
-			
-		}
+		Intern cr7;
+		AForm *a = cr7.makeForm("PRESIDENTIA     LPARDO assNFORM", "messi");
 		
-	}
-	{
-		PresidentialPardonForm	form("American Dream");
-		Bureaucrat				a("Francesco", 150);
-		Bureaucrat				b("Beppe", 5);
-	
-		try
-		{
-			form.execute(a);
-			// form.execute(b);
-		}
-		catch (const Bureaucrat::GradeTooLowException &a)
-		{
-			
-		}
+		std::cout << "riuscito" << std::endl;
+		delete a;
 	}
 	return (0);
 }
