@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:09:18 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 12:09:28 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:10:45 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ int main(void)
 			// form.execute(b);
 		}
 		catch (const Bureaucrat::GradeTooLowException &a)
-		{
-			
-		}
-		catch (const AForm::GradeTooLowException &b)
 		{
 			
 		}

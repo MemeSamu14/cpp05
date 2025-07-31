@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:10:31 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 12:09:53 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:10:39 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,6 @@ void		Bureaucrat::executeForm(AForm const &form) const
 	else
 	{
 		std::cout << "sfigato" << std::endl;
-		throw AForm::GradeTooLowException();
 	}
 		
 }
