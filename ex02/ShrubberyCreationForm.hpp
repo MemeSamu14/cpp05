@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 16:12:56 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/30 17:58:34 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 10:26:03 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class ShrubberyCreationForm: public AForm
 		std::string target;
 	public:
 		ShrubberyCreationForm(const std::string &target);
+		ShrubberyCreationForm(const ShrubberyCreationForm &a);
+		const ShrubberyCreationForm& operator=(const ShrubberyCreationForm &a);
 		~ShrubberyCreationForm(){};
 		std::string	getName() const;
 		void		beSigned(const Bureaucrat &a);

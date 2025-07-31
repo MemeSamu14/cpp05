@@ -1,11 +1,11 @@
 NAME = trhowyourself
 
-HEADERS = AForm.hpp ShrubberyCreationForm.hpp Bureaucrat.hpp
+HEADERS = AForm.hpp ShrubberyCreationForm.hpp Bureaucrat.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -g -std=c++98
 
-SRC = main.cpp ShrubberyCreationForm.cpp Bureaucrat.cpp
+SRC = main.cpp AForm.cpp ShrubberyCreationForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 
 all: $(NAME) 
 

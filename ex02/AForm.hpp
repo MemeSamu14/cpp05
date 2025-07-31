@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:45:23 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/30 17:50:51 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/07/31 10:19:04 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,10 @@ class AForm
 		const int			gradeSign;
 		const int			gradeExec;
 	public:
-		AForm(const std::string name, bool isSigned, const int gradeSign, const int gradeExec)
-		: name(name), isSigned(isSigned), gradeSign(gradeSign), gradeExec(gradeExec)
-		{
-			
-		};
+		AForm(const std::string name, bool isSigned, const int gradeSign, const int gradeExec);
 		AForm(const AForm &a);
-		const AForm& operator=(const AForm &a)
-		{
-			this->isSigned = a.isSigned;
-			return (*this);
-		}
-		~AForm(){};
+		const AForm& operator=(const AForm &a);
+		~AForm();
 		class GradeTooHighException: public std::exception
 		{
 			public:
@@ -52,11 +44,11 @@ class AForm
 				GradeTooLowException();
 				const char *what() const throw();
 		};
-		std::string	getName() const{return (this->name);};
-		bool		getIsSigned() const{return (this->isSigned);};
-		int			getGradeSign() const{return (this->gradeSign);};
-		int			getGradeExec() const{return (this->gradeExec);};
-		void		setIsSigned(bool set) {this->isSigned = set;};
+		std::string	getName() const;
+		bool		getIsSigned() const;
+		int			getGradeSign() const;
+		int			getGradeExec() const;
+		void		setIsSigned(bool set){this->isSigned = set;};
 		virtual void		beSigned(const Bureaucrat &a) = 0;
 };
 
