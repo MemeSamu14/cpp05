@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:10:31 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/30 14:39:19 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/01 11:22:48 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,3 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& a)
 	os << a.getName() << ", bureaucrat grade " << a.getGrade();
 	return os;
 }
-

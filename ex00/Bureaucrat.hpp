@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:10:31 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/30 15:05:39 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/01 11:19:31 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class Bureaucrat
 	private:
 		const std::string name;
 		int	grade;
-	
-		
 	public:
 		class GradeTooHighException: public std::exception
 		{

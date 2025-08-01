@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:09:18 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/30 14:21:50 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/01 11:23:14 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(void)
 	{
 		Bureaucrat	messi("messi", 50);
 		std::cout << "Correct Execution" << std::endl;
+		std::cout << messi << std::endl;
 	}
 	catch (const Bureaucrat::GradeTooHighException &a)
 	{
