@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:10:31 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 11:50:35 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/03 12:46:31 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,20 @@ class Bureaucrat
 	Bureaucrat(const Bureaucrat &a);
 	const Bureaucrat& operator=(const Bureaucrat& a);
 	~Bureaucrat();
+	void	increment()
+	{
+		if (this->grade + 1 > 150)
+			throw Bureaucrat::GradeTooLowException();
+		else
+			this->grade++;
+	};
+	void	decrement()
+	{
+		if (this->grade - 1 < 1)
+			throw Bureaucrat::GradeTooHighException();
+		else
+			this->grade--;
+	};
 	const std::string getName() const;
 	int 		getGrade() const;
 	void		signForm(AForm& a);

@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:45:23 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/30 15:50:38 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/03 12:42:51 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Form::Form(const std::string name, bool isSigned, const int gradeSign, const int
 : name(name), isSigned(isSigned), gradeSign(gradeSign), gradeExec(gradeExec)
 {
 	if (this->gradeSign > 150 || this->gradeExec > 150)
-		throw Form::GradeTooHighException();
-	else if (this->gradeSign < 1 || this->gradeExec < 1)
 		throw Form::GradeTooLowException();
+	else if (this->gradeSign < 1 || this->gradeExec < 1)
+		throw Form::GradeTooHighException();
 	return ;
 }
 Form::Form(const Form &a)
@@ -93,6 +93,6 @@ void	Form::beSigned(const Bureaucrat &a)
 	}
 	else if (a.getGrade() < this->gradeSign)
 	{
-		throw Form::GradeTooLowException();
+		throw Form::GradeTooHighException();
 	}
 }
