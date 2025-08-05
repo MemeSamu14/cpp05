@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:21:58 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 12:09:15 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:18:43 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ std::string RobotomyRequestForm::getTarget() const
 
 void	RobotomyRequestForm::beSigned(const Bureaucrat &a)
 {
-	if (this->getIsSigned() == false && a.getGrade() >= this->getGradeSign())
+	if (this->getIsSigned() == false && a.getGrade() <= this->getGradeSign())
 	{
 		this->setIsSigned(true);
 	}
@@ -54,7 +54,7 @@ void		RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	std::srand(std::time(NULL));
 	int random_number = std::rand();
 
-	if (this->getIsSigned() == false && executor.getGrade() >= this->getGradeExec())
+	if (this->getIsSigned() == false && executor.getGrade() <= this->getGradeExec())
 	{
 		if (random_number >= 50)
 		{

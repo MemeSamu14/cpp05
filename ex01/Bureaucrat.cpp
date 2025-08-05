@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:10:31 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/08/03 12:48:35 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:17:12 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	Bureaucrat::signForm(Form& a)
 	std::string reason = "e' scarso";
 	if (a.getIsSigned() == true)
 		reason = "e' gia' stata vinta";
-	if (a.getIsSigned() == false && this->getGrade() >= a.getGradeSign())
+	if (a.getIsSigned() == false && this->getGrade() <= a.getGradeSign())
 	{
 		a.beSigned(*this);
 		std::cout << this->getName() << " signed " << a.getName() << std::endl;

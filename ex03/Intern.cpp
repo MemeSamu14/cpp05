@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 13:27:40 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 17:42:28 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:28:32 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,20 @@ AForm* Intern::makeForm(const std::string &name, const std::string &target)
 	{
 		case 0:
 		{
-			ret = new PresidentialPardonForm(target); 
+			ret = new PresidentialPardonForm(target);
+			std::cout << "Intern creates " << ret->getName() << std::endl;
 			return (ret);
 		}
 		case 1:
 		{
-			ret = new RobotomyRequestForm(target); 
+			ret = new RobotomyRequestForm(target);
+			std::cout << "Intern creates " << ret->getName() << std::endl;
 			return (ret);		
 		}
 		case 2:
 		{
 			ret = new ShrubberyCreationForm(target); 
+			std::cout << "Intern creates " << ret->getName() << std::endl;
 			return (ret);
 		}
 		case 3:
@@ -55,6 +58,5 @@ AForm* Intern::makeForm(const std::string &name, const std::string &target)
 			return (NULL);
 		}
 	}
-	std::cout << "Intern creates " << name << std::endl;
 	return (ret);
 }

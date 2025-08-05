@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:45:23 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/08/03 12:42:51 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:14:29 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ std::ostream& operator<<(std::ostream& os, const Form& a)
 
 void	Form::beSigned(const Bureaucrat &a)
 {
-	if (a.getGrade() >= (int)this->gradeSign)
+	if (a.getGrade() <= (int)this->gradeSign)
 	{
 		this->isSigned = true;
 	}
-	else if (a.getGrade() < this->gradeSign)
+	else if (a.getGrade() > this->gradeSign)
 	{
-		throw Form::GradeTooHighException();
+		throw Form::GradeTooLowException();
 	}
 }

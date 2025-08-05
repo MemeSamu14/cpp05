@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:05:37 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 12:04:22 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:18:11 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ std::string PresidentialPardonForm::getTarget() const
 
 void	PresidentialPardonForm::beSigned(const Bureaucrat &a)
 {
-	if (this->getIsSigned() == false && a.getGrade() >= this->getGradeSign())
+	if (this->getIsSigned() == false && a.getGrade() <= this->getGradeSign())
 	{
 		this->setIsSigned(true);
 	}
@@ -48,7 +48,7 @@ void	PresidentialPardonForm::beSigned(const Bureaucrat &a)
 
 void		PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	if (this->getIsSigned() == false && executor.getGrade() >= this->getGradeExec())
+	if (this->getIsSigned() == false && executor.getGrade() <= this->getGradeExec())
 	{
 		std::cout << target 
 		<< " has been pardoned by Zaphod Beeblebrox" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 16:12:56 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/07/31 12:03:47 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:18:33 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ std::string ShrubberyCreationForm::getTarget() const
 
 void	ShrubberyCreationForm::beSigned(const Bureaucrat &a)
 {
-	if (this->getIsSigned() == false && a.getGrade() >= this->getGradeSign())
+	if (this->getIsSigned() == false && a.getGrade() <= this->getGradeSign())
 	{
 		this->setIsSigned(true);
 	}
@@ -50,7 +50,7 @@ void	ShrubberyCreationForm::beSigned(const Bureaucrat &a)
 
 void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (this->getIsSigned() == false && executor.getGrade() >= this->getGradeExec())
+	if (this->getIsSigned() == false && executor.getGrade() <= this->getGradeExec())
 	{
 		std::string tmp1 = this->target.c_str();
 		std::string tmp2 = "_shrubbery";

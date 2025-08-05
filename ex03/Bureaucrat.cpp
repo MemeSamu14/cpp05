@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:10:31 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/08/03 12:46:52 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:24:20 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	Bureaucrat::signForm(AForm& a)
 
 void		Bureaucrat::executeForm(AForm const &form) const
 {
-	if (this->grade >= form.getGradeExec())
+	if (this->grade <= form.getGradeExec())
 	{
 		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;

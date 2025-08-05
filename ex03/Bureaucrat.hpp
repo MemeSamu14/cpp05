@@ -6,7 +6,7 @@
 /*   By: sfiorini <sfiorini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:10:31 by sfiorini          #+#    #+#             */
-/*   Updated: 2025/08/03 12:46:41 by sfiorini         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:01:33 by sfiorini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ class Bureaucrat
 	int 		getGrade() const;
 	void		signForm(AForm& a);
 	void		executeForm(AForm const & form) const;
-	void	increment()
+	void	decrement()
 	{
 		if (this->grade + 1 > 150)
 			throw Bureaucrat::GradeTooLowException();
 		else
 			this->grade++;
 	};
-	void	decrement()
+	void	increment()
 	{
 		if (this->grade - 1 < 1)
 			throw Bureaucrat::GradeTooHighException();
